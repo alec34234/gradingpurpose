@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignments - Teacher Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        td input {
+            width: 60px;
+            text-align: center;
+        }
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .add-assignment {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .add-assignment:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        Assignments - Teacher Portal
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Assignment Table -->
+        <div class="table-container">
+            <table id="assignmentsTable">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Assignment 1</th>
+                        <th>Assignment 2</th>
+                        <th>Assignment 3</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Sample student rows (these can be dynamically generated in a real app) -->
+                    <tr>
+                        <td>John Doe</td>
+                        <td><input type="number" value="90" min="0" max="100" id="johnDoeAss1"></td>
+                        <td><input type="number" value="85" min="0" max="100" id="johnDoeAss2"></td>
+                        <td><input type="number" value="88" min="0" max="100" id="johnDoeAss3"></td>
+                        <td><button onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td><input type="number" value="92" min="0" max="100" id="janeSmithAss1"></td>
+                        <td><input type="number" value="95" min="0" max="100" id="janeSmithAss2"></td>
+                        <td><input type="number" value="91" min="0" max="100" id="janeSmithAss3"></td>
+                        <td><button onclick="deleteRow(this)">Delete</button></td>
+                    </tr>
+                    <!-- More rows can be added dynamically -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add Assignment Button -->
+        <div class="button-container">
+            <a href="javascript:void(0);" class="add-assignment" onclick="addAssignment()">Add New Assignment</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Grading Portal - All rights reserved.
+    </footer>
+
+    <script>
+        // Function to delete a student row
+        function deleteRow(button) {
+            var row = button.parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
+
+        // Function to add a new assignment column to the table
+        function addAssignment() {
+            var table = document.getElementById("assignmentsTable");
+            var headerRow = table.getElementsByTagName("thead")[0].getElementsByTagName("tr")[0];
+            var newAssignmentNumber = headerRow.getElementsByTagName("th").length - 1; // Counting the columns
+            var newAssignmentName = "Assignment " + newAssignmentNumber;
+
+            // Add new column header for the new assignment
+            var newHeader = document.createElement("th");
+            newHeader.textContent = newAssignmentName;
+            headerRow.appendChild(newHeader);
+
+            // Add new column for each student row
+            var rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+            for (var i = 0; i < rows.length; i++) {
+                var newCell = rows[i].insertCell(newAssignmentNumber - 1);
+                var inputField = document.createElement("input");
+                inputField.type = "number";
+                inputField.value = 0;
+                inputField.min = "0";
+                inputField.max = "100";
+                newCell.appendChild(inputField);
+            }
+        }
+    </script>
+
+</body>
+</html>

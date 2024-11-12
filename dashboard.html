@@ -1,0 +1,94 @@
+dashboard.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard - Teacher Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .welcome-message {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .section-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .btn-link {
+            display: block;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .btn-link:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Teacher Portal Dashboard
+    </header>
+
+    <div class="container">
+        <div class="welcome-message">
+            <h2>Welcome, [Teacher's Name]!</h2>
+            <p>Here you can manage grades, assignments, and more.</p>
+        </div>
+
+        <div class="section-links">
+            <a href="grades.html" class="btn-link">Grades</a>
+            <a href="assignments.html" class="btn-link">Assignments</a>
+            <a href="students.html" class="btn-link">Students</a>
+        </div>
+
+        <div class="section-links" style="margin-top: 30px;">
+            <a href="settings.html" class="btn-link">Settings</a>
+            <a href="logout.html" class="btn-link">Logout</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Grading Portal - All rights reserved.
+    </footer>
+
+</body>
+</html>

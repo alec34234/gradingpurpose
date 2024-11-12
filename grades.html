@@ -1,0 +1,108 @@
+grades.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grades - Teacher Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .grades-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        .grades-table th, .grades-table td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-back:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Grades - Teacher Portal
+    </header>
+
+    <div class="container">
+        <h2>Student Grades</h2>
+        <table class="grades-table">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Assignment</th>
+                    <th>Grade</th>
+                    <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Math Assignment 1</td>
+                    <td>A</td>
+                    <td>Excellent work!</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Math Assignment 1</td>
+                    <td>B+</td>
+                    <td>Good effort, keep improving.</td>
+                </tr>
+                <!-- Add more student data as needed -->
+            </tbody>
+        </table>
+        <a href="dashboard.html" class="btn-back">Back to Dashboard</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Grading Portal - All rights reserved.
+    </footer>
+
+</body>
+</html>
